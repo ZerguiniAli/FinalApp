@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:id="@+id/firstpage"
+    tools:context=".Firstpage">
+
+    <RelativeLayout
+        android:id="@+id/logo"
+        android:layout_width="1100px"
+        android:layout_height="1100px"
+        android:layout_centerInParent="true"
+        android:background="@drawable/logo" />
+
+    <Button
+        android:id="@+id/letsgo"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/GreenC"
+        android:text="Let's Go !"
+        android:textSize="20dp"
+        app:cornerRadius="8dp" />
+
+</RelativeLayout>

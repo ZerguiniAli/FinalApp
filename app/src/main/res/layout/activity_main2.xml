@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/BackgroundMAIN"
+    android:background="@color/background"
+    tools:context=".MAIN">
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageButton
+        android:id="@+id/set"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_circle"
+        android:src="@drawable/settings" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:layout_height="55dp"
+        app:menu="@menu/menu"
+        android:id="@+id/navigation"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_navigation_bar"
+        app:itemIconTint="@drawable/item_selector2"
+        app:itemTextColor="@drawable/item_selector2"
+        />
+
+
+</RelativeLayout>
