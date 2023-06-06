@@ -2,6 +2,8 @@ package com.example.finalapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -76,6 +78,9 @@ public class LoignEmailOrUsername extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    public static String PREFS_NAME = "MyPrefsFile" ,USERNAME ="user" ;
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -88,6 +93,7 @@ public class LoignEmailOrUsername extends Fragment {
         relativeLayout = view.findViewById(R.id.wait);
         us = view.findViewById(R.id.username);
         ps = view.findViewById(R.id.password);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,9 +106,18 @@ public class LoignEmailOrUsername extends Fragment {
                 } else {
                     relativeLayout.setVisibility(view.VISIBLE);
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, endpoint.login_url, response -> {
-                        if (response.equals("Connected login success")) {
+                        if (response.equals("login success")) {
                             relativeLayout.setVisibility(view.INVISIBLE);
                             Intent intent = new Intent(getActivity(), MAIN.class);
+                            SharedPreferences sharedPreferences = getActivity().getSharedPreferences(LoignEmailOrUsername.PREFS_NAME,0);
+                            SharedPreferences sharedPreferences1 = getActivity().getSharedPreferences(LoignEmailOrUsername.USERNAME,0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            SharedPreferences.Editor editor1 = sharedPreferences1.edit();
+                            editor.putBoolean("hasLoggedIn" , true);
+                            editor1.putString("userName" , username);
+                            editor.commit();
+                            editor1.commit();
+                            intent.putExtra("username" , username);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getActivity(), "username or password not available", Toast.LENGTH_SHORT).show();

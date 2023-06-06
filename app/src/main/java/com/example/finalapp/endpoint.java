@@ -6,4 +6,5 @@ public class endpoint {
     public static final String login_url = base_url + "login.php";
     public static final String forget_url = base_url + "forget_password.php";
     public static final String reset_url = base_url + "reset_password.php";
+    public static final String settings = base_url + "fetchSettings.php";
 }

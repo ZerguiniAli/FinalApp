@@ -1,17 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".SETTINGS">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/set"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/btn_circle"
+        android:src="@drawable/returnb" />
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/GreenC"
-        android:text="Settings"
-        android:layout_centerInParent="true"/>
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle"/>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textColor="@color/GreenC"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:textColor="@color/GreenC"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone number :"
+            android:textColor="@color/GreenC"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+2131231234"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="20dp"/>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/GreenC"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:text="Change settings"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:cornerRadius="8dp" />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#FF0000"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:text="Log out"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
 
 
 </RelativeLayout>

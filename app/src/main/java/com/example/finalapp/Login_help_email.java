@@ -98,7 +98,7 @@ public class Login_help_email extends Fragment {
 
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,endpoint.forget_url, response -> {
-                    if (response.equals("Connected login success"))
+                    if (response.equals("login success"))
                     {
                         sendEmail();
 

@@ -85,7 +85,7 @@ public class Create_password extends Fragment {
             public void onClick(View view) {
                 String password = et.getText().toString();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,endpoint.registre_url, response -> {
-                    if (response.equals("Connected success"))
+                    if (response.equals("success"))
                     {
                         Intent intent = new Intent(getActivity(), MAIN.class);
                         startActivity(intent);

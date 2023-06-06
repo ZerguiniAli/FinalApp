@@ -84,7 +84,7 @@ public class New_Password extends Fragment {
                 String password = et.getText().toString();
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,endpoint.reset_url, response -> {
-                    if (response.equals("Connected success"))
+                    if (response.equals("success"))
                     {
                         Intent intent = new Intent(getActivity(), MAIN.class);
                         startActivity(intent);
