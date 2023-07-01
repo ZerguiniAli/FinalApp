@@ -17,11 +17,76 @@
         android:text="DONE"
         android:fontFamily="@font/chesnagroteskmedium"
         android:backgroundTint="@color/GreenC"
-        android:layout_marginTop="40dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/background"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:id="@+id/done"/>
+        android:id="@+id/done" />
+    <Button
+        android:id="@+id/addpostion"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="ADD POSTION"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/GreenC"
+        android:textColor="@color/background"
+        />
+    <Button
+        android:id="@+id/removepostion"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="REMOVE POSTION"
+        android:layout_alignBottom="@id/addpostion"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="#FF0000"
+        android:textColor="@color/background"
+        />
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/backgroundcards">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Give this field a name"
+            android:textColor="@color/GreenC"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/chesnagroteskmedium"/>
+
+        <EditText
+            android:id="@+id/fieldname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext"
+            android:layout_marginTop="20dp"
+            android:hint="name"
+            android:padding="10dp"
+            android:textColorHint="@color/hintcolor"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chesnagroteskmedium"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/GreenC"
+            android:textColor="@color/white"
+            android:text="Save"
+            android:textSize="20dp"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:id="@+id/save"
+            />
+    </LinearLayout>
 
 
 </RelativeLayout>

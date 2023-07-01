@@ -1,0 +1,107 @@
+<!-- item_weather.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="120dp"
+        android:padding="25dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:gravity="center"
+                android:layout_height="50dp">
+                <RelativeLayout
+                    android:id="@+id/rain1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/heavyrain"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    />
+                <RelativeLayout
+                    android:id="@+id/fog1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/cloudy"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+/>
+                <RelativeLayout
+                    android:id="@+id/sun1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/sun"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    android:layout_centerVertical="true"
+/>
+                <RelativeLayout
+                    android:id="@+id/drizzle1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/drizzle"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible" />
+                <RelativeLayout
+                    android:id="@+id/snow1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/snow"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+/>
+                <RelativeLayout
+                    android:id="@+id/moon1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/moon"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tempMaxTextView"
+                android:layout_width="wrap_content"
+                android:text="as"
+                android:fontFamily="@font/chesnagroteskmedium"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/dateTextView"
+                android:text="as"
+                android:fontFamily="@font/chesnagroteskmedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/timeTextView"
+                android:text="as"
+                android:fontFamily="@font/chesnagroteskmedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+</LinearLayout>

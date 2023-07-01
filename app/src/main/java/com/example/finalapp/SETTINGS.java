@@ -49,7 +49,7 @@ public class SETTINGS extends Fragment {
     Button Logout ;
     ImageButton ImgBack ;
 
-    public static TextView Name , Email ;
+    public static TextView Name , Email , Phone ;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -97,16 +97,20 @@ public class SETTINGS extends Fragment {
         ImgBack = view.findViewById(R.id.set);
         Name = view.findViewById(R.id.name);
         Email = view.findViewById(R.id.email);
-
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            String username = bundle.getString("username");
-            Name.setText(username);
-            String email = bundle.getString("email");
-            Email.setText(email);
-            // Use the retrieved username and email values as needed
+        SharedPreferences usname = getActivity().getSharedPreferences(LoignEmailOrUsername.U_name,0);
+        SharedPreferences email = getActivity().getSharedPreferences(LoignEmailOrUsername.A_EMAIL ,0);
+        String USERNAME = usname.getString("user" , "");
+        Name.setText(USERNAME);
+        String EMAIL = email.getString("email" ,"");
+        Email.setText(EMAIL);
+        String phone = email.getString("phone" , "");
+        Phone = view.findViewById(R.id.phone);
+        if(phone.equals("null")){
+            Phone.setText("empty");
         }
-        // Make a request to the PHP file
+        else {
+            Phone.setText(phone);
+        }
 
 
         Logout.setOnClickListener(new View.OnClickListener() {

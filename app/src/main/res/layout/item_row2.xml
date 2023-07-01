@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="100dp">
+        <TextView
+            android:id="@+id/keyParition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="keyPartition"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/COLOR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textSize="15dp"
+            android:layout_toRightOf="@id/keyParition"
+            />
+    </RelativeLayout>
+</LinearLayout>

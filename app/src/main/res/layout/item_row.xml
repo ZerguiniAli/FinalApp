@@ -1,0 +1,79 @@
+<!-- item_row.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:id="@+id/relativeitem"
+        android:background="@drawable/backgroundcards"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/Part1"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/keynameTextVieW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Field Name"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:fontFamily="@font/chesnagroteskmedium" />
+            <TextView
+                android:id="@+id/Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laghouat"
+                android:layout_below="@id/keynameTextVieW"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:fontFamily="@font/chesnagroteskmedium"
+                android:layout_marginTop="20dp"
+                />
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/Part1"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/keynameTextVieW2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 Partition"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:fontFamily="@font/chesnagroteskmedium"
+
+            android:layout_marginLeft="25dp"/>
+        <TextView
+            android:id="@+id/Location2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Workers"
+            android:layout_below="@id/keynameTextVieW2"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            />
+    </RelativeLayout>
+
+    </RelativeLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+
+
+</LinearLayout>

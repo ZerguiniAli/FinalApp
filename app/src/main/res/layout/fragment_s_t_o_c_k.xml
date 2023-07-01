@@ -1,16 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:padding="20dp"
     tools:context=".STOCK">
 
-    <TextView
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/add"
+        android:background="@drawable/circle"
+        android:id="@+id/imgbtn" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerViewForStock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imgbtn"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/addproductlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/GreenC"
-        android:text="STOCK"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:background="@drawable/add_product"
+        android:orientation="vertical"
+        android:padding="20dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:text="Add Product"
+            android:textColor="@color/GreenC"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:text="Product name :"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/prdName"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext"
+            android:padding="10dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:text="Product Quantity (KG) :"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/prdQT"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:text="It belong to (Field):"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/GreenC"
+            android:text="Add Product"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
 </RelativeLayout>

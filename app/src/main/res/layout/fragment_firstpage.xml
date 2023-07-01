@@ -9,11 +9,29 @@
     tools:context=".Firstpage">
 
     <RelativeLayout
-        android:id="@+id/logo"
+        android:id="@+id/logoback"
         android:layout_width="1100px"
         android:layout_height="1100px"
-        android:layout_centerInParent="true"
-        android:background="@drawable/logo" />
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/logoofapp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/GreenC"
+            android:fontFamily="@font/chesnagroteskmedium"
+            android:textStyle="bold"
+            android:text="MANAGE YOUR \nFIELD WITH \nEASE"
+            android:textSize="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="70dp"/>
+    </RelativeLayout>
 
     <Button
         android:id="@+id/letsgo"
@@ -25,6 +43,8 @@
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/GreenC"
         android:text="Let's Go !"
+        android:visibility="visible"
+        android:elevation="20dp"
         android:textSize="20dp"
         app:cornerRadius="8dp" />
 

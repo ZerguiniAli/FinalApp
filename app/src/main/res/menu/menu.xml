@@ -7,8 +7,12 @@
         android:title=""
         android:icon="@drawable/fields"/>
     <item android:id="@+id/stock"
+        android:visible="true"
         android:title=""
         android:icon="@drawable/stock"/>
+    <item android:id="@+id/tasks"
+        android:icon="@drawable/task"
+        android:title=""/>
     <item android:id="@+id/stat"
         android:title=""
         android:icon="@drawable/statistics"/>

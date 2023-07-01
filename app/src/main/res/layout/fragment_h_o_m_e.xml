@@ -3,14 +3,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
     tools:context=".HOME">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="CROPS"
+        android:fontFamily="@font/chesnagroteskmedium"
         android:textColor="@color/GreenC"
-        android:text="HOME"
-        android:layout_centerInParent="true"/>
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <soup.neumorphism.NeumorphCardView
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            app:neumorph_shadowElevation="8dp"
+
+
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <RelativeLayout
+                    android:id="@+id/rain"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/heavyrain"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    android:layout_marginRight="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/fog"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/cloudy"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    android:layout_marginRight="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/sun"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/sun"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/drizzle"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/drizzle"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    android:layout_marginRight="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/snow"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/snow"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    android:layout_marginRight="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/moon"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/moon"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/date"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/white"
+                    android:text="date"
+                    android:fontFamily="@font/chesnagroteskmedium"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/time"
+                    android:layout_toRightOf="@id/date"
+                    android:textColor="@color/white"
+                    android:text="time"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignBottom="@id/date"
+                    android:fontFamily="@font/chesnagroteskmedium"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Degree"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"
+                    android:text=""
+                    android:layout_below="@id/time"
+                    android:fontFamily="@font/chesnagroteskmedium"
+                    android:textSize="35dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/Degree"
+                    android:textColor="@color/white"
+                    android:text="°C"
+                    android:layout_alignBottom="@id/Degree"
+                    android:fontFamily="@font/chesnagroteskmedium"
+                    android:textSize="35dp"
+                    />
+                <TextView
+                    android:id="@+id/Weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Degree"
+                    android:textColor="@color/white"
+                    android:text="Rain"
+                    android:fontFamily="@font/chesnagroteskmedium"
+                    android:textSize="20dp"
+                    android:layout_alignStart="@id/Degree"
+                    />
+            </RelativeLayout>
+        </soup.neumorphism.NeumorphCardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:scrollbars="none"
+            android:padding="25dp"/>
+    </LinearLayout>
+
+
 
 </RelativeLayout>

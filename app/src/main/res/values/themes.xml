@@ -13,4 +13,8 @@
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>
+    <style name="CustomCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/black</item> <!-- Set your desired background color -->
+        <item name="cardElevation">4dp</item> <!-- Set your desired shadow elevation -->
+    </style>
 </resources>

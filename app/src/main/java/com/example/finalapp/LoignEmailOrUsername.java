@@ -21,6 +21,10 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,7 +43,7 @@ public class LoignEmailOrUsername extends Fragment {
 
     RelativeLayout relativeLayout ;
 
-    EditText us , ps ;
+    EditText em , ps ;
     TextView f1 , f2, c1, c2;
 
     ProgressBar progressBar;
@@ -78,7 +82,7 @@ public class LoignEmailOrUsername extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    public static String PREFS_NAME = "MyPrefsFile" ,USERNAME ="user" ;
+    public static String PREFS_NAME = "MyPrefsFile" , U_name = "USER_NAME" , A_EMAIL = "EMAIL";
 
 
 
@@ -91,17 +95,17 @@ public class LoignEmailOrUsername extends Fragment {
         button = view.findViewById(R.id.button);
         progressBar = view.findViewById(R.id.progressBar);
         relativeLayout = view.findViewById(R.id.wait);
-        us = view.findViewById(R.id.username);
+        em = view.findViewById(R.id.username);
         ps = view.findViewById(R.id.password);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String username = us.getText().toString();
+                String email = em.getText().toString();
                 String password = ps.getText().toString();
 
-                if (username.isEmpty() || password.isEmpty()) {
+                if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(getActivity(), "Please enter username or password", Toast.LENGTH_SHORT).show();
                 } else {
                     relativeLayout.setVisibility(view.VISIBLE);
@@ -110,15 +114,11 @@ public class LoignEmailOrUsername extends Fragment {
                             relativeLayout.setVisibility(view.INVISIBLE);
                             Intent intent = new Intent(getActivity(), MAIN.class);
                             SharedPreferences sharedPreferences = getActivity().getSharedPreferences(LoignEmailOrUsername.PREFS_NAME,0);
-                            SharedPreferences sharedPreferences1 = getActivity().getSharedPreferences(LoignEmailOrUsername.USERNAME,0);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            SharedPreferences.Editor editor1 = sharedPreferences1.edit();
                             editor.putBoolean("hasLoggedIn" , true);
-                            editor1.putString("userName" , username);
                             editor.commit();
-                            editor1.commit();
-                            intent.putExtra("username" , username);
                             startActivity(intent);
+                            getActivity().finishAffinity();
                         } else {
                             Toast.makeText(getActivity(), "username or password not available", Toast.LENGTH_SHORT).show();
                             relativeLayout.setVisibility(view.INVISIBLE);
@@ -130,15 +130,47 @@ public class LoignEmailOrUsername extends Fragment {
                     }) {
                         protected Map<String, String> getParams() {
                             Map<String, String> params = new HashMap<>();
-                            params.put("username", username);
+                            params.put("email", email);
                             params.put("password", password);
                             return params;
                         }
                     };
                     VolleySingleton.getInstance(getActivity()).addToRequestQueue(stringRequest);
+                    StringRequest stringRequest2 = new StringRequest(Request.Method.POST, endpoint.settings, response -> {
+                        try {
+                            JSONArray jsonArray = new JSONArray(response); // Convert the response string to a JSONArray
+                            if (jsonArray.length() > 0) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(0); // Get the first object from the array
+                                String USERNAME = jsonObject.getString("username"); // Extract the username value
+                                String EMAIL = jsonObject.getString("email");
+                                String PHONE = jsonObject.getString("phone_number");// Extract the email valueBundle bundle = new Bundle();
+                                SharedPreferences Uname = getActivity().getSharedPreferences(U_name,0);
+                                SharedPreferences Email = getActivity().getSharedPreferences(A_EMAIL , 0);
+                                SharedPreferences.Editor Euname = Uname.edit();
+                                SharedPreferences.Editor Eemail = Email.edit();
+                                Euname.putString("user" , USERNAME);
+                                Eemail.putString("email" , EMAIL);
+                                Eemail.putString("phone" , PHONE);
+                                Euname.commit();
+                                Eemail.commit();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }, error -> {
+                        Toast.makeText(getActivity(), "Please check your internet connection", Toast.LENGTH_SHORT).show();
+                    }) {
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            params.put("email", email);
+                            return params;
+                        }
+                    };
+                    VolleySingleton.getInstance(getActivity()).addToRequestQueue(stringRequest2);
+
+                    }
                 }
-            }
-        });
+            });
 
         f1 = view.findViewById(R.id.forget);
         f1.setOnClickListener(new View.OnClickListener() {
